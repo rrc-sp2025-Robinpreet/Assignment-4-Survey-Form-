@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Entertainment Preferences Survey</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1 id="page-title">Entertainment Preferences Survey</h1>
+      <p class="lead">
+        Tell us about your favorite ways to relax and have fun! This short survey covers movies, music, and games.
+      </p>
+    </header>
+
+    <form id="surveyForm" action="https://httpbin.org/post" method="POST" novalidate>
+      <!-- Personal Information --->
+
+
+      <fieldset>
+        <legend>Your Information</legend>
+
+        <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+        <input id="fullName" name="fullName" type="text" required />
+        <span class="error" id="err-fullName" aria-live="polite"></span>
+
+        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" required />
+        <span class="error" id="err-email" aria-live="polite"></span>
+      </fieldset>
+
+      <!-- Username (regex) -->
+      <fieldset>
+        <legend>Account Details</legend>
+
+        <label for="username">Username (letters & numbers only, 3-15 chars) <span aria-hidden="true">*</span></label>
+        <input id="username" name="username" type="text" required />
+        <small>Example: Harry Potter</small>
+        <span class="error" id="err-username" aria-live="polite"></span>
+
+        <label for="code">Membership Code (format: ABC-1234)</label>
+        <input id="code" name="code" type="text" placeholder="e.g., ABC-1234" />
+        <small>Three uppercase letters, dash, four digits.</small>
+        <span class="error" id="err-code" aria-live="polite"></span>
+
+        <label for="birthdate">Favorite Movie Release Date (DD-MM-YYYY)</label>
+        <input id="birthdate" name="birthdate" type="text" placeholder="DD-MM-YYYY" />
+        <small>Enter a valid date format (e.g., 15-07-2023).</small>
+        <span class="error" id="err-birthdate" aria-live="polite"></span>
+      </fieldset>
+
+      <!-- Radio Buttons -->
+      <fieldset>
+        <legend>Preferred Type of Entertainment</legend>
+        <label><input type="radio" name="entType" value="movies" /> Movies</label>
+        <label><input type="radio" name="entType" value="music" /> Music</label>
+        <label><input type="radio" name="entType" value="gaming" /> Gaming</label>
+        <label><input type="radio" name="entType" value="sports" /> Sports</label>
+        <span class="error" id="err-entType" aria-live="polite"></span>
+      </fieldset>
+
+      <!-- Checkbox -->
+      <fieldset>
+        <legend>Streaming Platforms You Use (Select all that apply)</legend>
+        <label><input type="checkbox" name="platforms" value="netflix" /> Netflix</label>
+        <label><input type="checkbox" name="platforms" value="spotify" /> Spotify</label>
+        <label><input type="checkbox" name="platforms" value="disney" /> Disney+</label>
+        <label><input type="checkbox" name="platforms" value="youtube" /> YouTube</label>
+        <span class="error" id="err-platforms" aria-live="polite"></span>
+      </fieldset>
+
+      <!-- Dropdown -->
+      <fieldset>
+        <legend>Favorite Genre</legend>
+        <label for="genre">Select Your Favorite Genre:</label>
+        <select id="genre" name="genre">
+          <option value="">-- Select Genre --</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
+          <option value="horror">Horror</option>
+          <option value="pop">Pop Music</option>
+          <option value="rock">Rock Music</option>
+          <option value="classical">Classical Music</option>
+          <option value="sports">Sports</option>
+        </select>
+        <span class="error" id="err-genre" aria-live="polite"></span>
+      </fieldset>
+
+      
