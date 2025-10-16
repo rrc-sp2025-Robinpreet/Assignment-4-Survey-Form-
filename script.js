@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function validateUsername() {
     const v = username.value.trim();
     if (!v) return showError('username', 'Username is required'), false;
-    if (!usernameRe.test(v)) return showError('username', 'Letters/numbers only (3–15 chars)'), false;
+    if (!usernameRe.test(v)) return showError('username', 'Letters/numbers only (3-15 chars)'), false;
     clearError('username'); return true;
   }
   function validateCode() {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function validateHours() {
     const v = hours.value;
-    if (v && (v < 0 || v > 168)) return showError('hours', 'Enter 0–168 hours'), false;
+    if (v && (v < 0 || v > 168)) return showError('hours', 'Enter 0-168 hours'), false;
     clearError('hours'); return true;
   }
   function validateComments() {
