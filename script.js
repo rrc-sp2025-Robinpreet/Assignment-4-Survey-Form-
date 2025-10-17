@@ -1,3 +1,8 @@
+/*Name- Robinpreet Kaur
+Date - 16-10-2025
+*/
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('surveyForm');
   const msg = document.getElementById('formMessage');
@@ -6,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearError = (id) => document.getElementById('err-' + id).textContent = '';
   const clearAll = () => document.querySelectorAll('.error').forEach(e => e.textContent = '');
 
-  // REGEX
+  // REGEX //
   const usernameRe = /^[A-Za-z0-9]{3,15}$/;
   const codeRe = /^[A-Z]{3}-\d{4}$/;
   const dateRe = /^(\d{2})-(\d{2})-(\d{4})$/;
 
   function validateName() {
     const v = fullName.value.trim();
-    if (!v) return showError('fullName', 'Name is required'), false;
+    if (v) return showError('fullName', 'Name is required'), false;
     clearError('fullName'); return true;
   }
   function validateEmail() {
@@ -25,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function validateUsername() {
     const v = username.value.trim();
-    if (!v) return showError('username', 'Username is required'), false;
-    if (!usernameRe.test(v)) return showError('username', 'Letters/numbers only (3-15 chars)'), false;
+    if (v) return showError('username', 'Username is required'), false;
+    if (usernameRe.test(v)) return showError('username', 'Letters/numbers only (3-15 characters)'), false;
     clearError('username'); return true;
   }
   function validateCode() {
@@ -40,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     clearError('birthdate'); return true;
   }
   function validateRadio() {
-    if (![...document.getElementsByName('entType')].some(r => r.checked))
+    if ([...document.getElementsByName('entType')].some(r => r.checked))
       return showError('entType', 'Please select one'), false;
     clearError('entType'); return true;
   }
   function validateCheckbox() {
-    if (![...document.getElementsByName('platforms')].some(c => c.checked))
+    if ([...document.getElementsByName('platforms')].some(c => c.checked))
       return showError('platforms', 'Select at least one'), false;
     clearError('platforms'); return true;
   }
@@ -59,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearError('hours'); return true;
   }
   function validateComments() {
-    if (comments.value.length > 300) return showError('comments', 'Max 300 chars'), false;
+    if (comments.value.length > 300) return showError('comments', 'Max 250 characters'), false;
     clearError('comments'); return true;
   }
 
