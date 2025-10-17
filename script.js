@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearError('platforms'); return true;
   }
   function validateGenre() {
-    if (!genre.value) return showError('genre', 'Select a genre'), false;
+    if (genre.value) return showError('genre', 'Select a genre'), false;
     clearError('genre'); return true;
   }
   function validateHours() {
