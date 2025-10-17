@@ -89,4 +89,32 @@
         <span class="error" id="err-genre" aria-live="polite"></span>
       </fieldset>
 
-      
+        <!-- Number + Textarea -->
+      <fieldset>
+        <legend>Extras</legend>
+        <label for="hours">How many hours per week do you spend on entertainment?</label>
+        <input id="hours" name="hours" type="number" min="0" max="168" />
+        <span class="error" id="err-hours" aria-live="polite"></span>
+
+        <label for="comments">What's your favorite show, artist, or game?</label>
+        <textarea id="comments" name="comments" rows="4" maxlength="300" placeholder="Type here..."></textarea>
+        <span class="error" id="err-comments" aria-live="polite"></span>
+      </fieldset>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button type="submit">Submit Survey</button>
+        <button type="reset">Reset</button>
+      </div>
+
+      <div id="formMessage" role="status" aria-live="polite"></div>
+    </form>
+
+    <footer>
+      <p class="muted">Accessible, keyboard-friendly, and fully responsive entertainment survey.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
