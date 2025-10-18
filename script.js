@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function validateEmail() {
     const v = email.value.trim();
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!v) return showError('email', 'Email is required'), false;
-    if (!re.test(v)) return showError('email', 'Invalid email format'), false;
+    if (v) return showError('email', 'Email is required'), false;
+    if (re.test(v)) return showError('email', 'Invalid email format'), false;
     clearError('email'); return true;
   }
   function validateUsername() {
